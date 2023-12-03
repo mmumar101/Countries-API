@@ -1,23 +1,18 @@
-import logo from './logo.svg';
-import './App.css';
+import './index.css';
+import AllCountries from './components/AllCountries';
+import CountryInfo from './components/CountryInfo';
+import { Routes,Route } from 'react-router-dom'
+import { GetThemeValue } from './components/contextTheme';
 
 function App() {
+  const {darkTheme} = GetThemeValue();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className={`${darkTheme ? 'bg-[#F2F2F2]' : 'bg-[#202C36]'} ${darkTheme ? 'text-[#2B3844]' : 'text-[#F2F2F2]'} min-h-screen`}>
+      <Routes>
+      <Route path='/' element={<AllCountries />} />
+      <Route path='/country/:countryName' element={<CountryInfo />} />
+      </Routes>
     </div>
   );
 }
