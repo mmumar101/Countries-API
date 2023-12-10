@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
-import { Link } from 'react-router-dom'
+import {Link, useParams } from 'react-router-dom'
+import { api } from './api'
+// import { Link } from 'react-router-dom'
 
 
 
@@ -15,7 +16,7 @@ function CountryInfo() {
   
   const getCountryByName = async() => {
     try {
-      const res = await fetch(`${'https://restcountries.com/v3.1'}/name/${countryName}`)
+      const res = await fetch(`${api}/name/${countryName}`)
 
       if(!res.ok) throw new Error('Could not Find Country')
 
@@ -48,7 +49,7 @@ function CountryInfo() {
               <div>
                 <img src={country.flags.png} alt='' />
               </div>
-
+              
               <div className='mt-8'>
                 <h5>Native Name:  <span>{country.name.common}</span></h5>
                 <h5>Population:  <span>{country.population}</span></h5>

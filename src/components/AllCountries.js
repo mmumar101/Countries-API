@@ -4,7 +4,8 @@ import { GetThemeValue } from './contextTheme';
 import logo from '../images/iconoir_half-moon.png';
 import SearchInput from './SearchInput';
 import FilterCountry from './FilterCountry';
-import { Link } from 'react-router-dom'
+import {Link}  from 'react-router-dom';
+import { api } from './api';
 
 //  apiUrl = 'https://restcountries.com/v3.1'
 
@@ -12,13 +13,14 @@ function AllCountries() {
     const [countries, setCountries] = useState([])
     const [isLoading, setIsLoading] = useState(true)
     const [error, setError] = useState('')
+
     const {darkTheme, themeHandler} = GetThemeValue()
     
 
     const getAllCountries = async()=>{
 
       try {
-        const res = await fetch(`${'https://restcountries.com/v3.1'}/all`)
+        const res = await fetch(`${api}/all`)
 
         if(!res.ok) throw new Error('Something Went Wrong!')
 
@@ -98,7 +100,7 @@ function AllCountries() {
       {/* ================================= INPUT FIELD ================================ */}
       <div className=" w-[90%] mx-auto ">
         <div className='sm:flex md:flex lg:flex mb-12 justify-between mx-auto'>
-         <SearchInput  onsearch={getCountryByName}/>
+         <SearchInput  onsearch={getCountryByName}/> 
 
 
         {isLoading && !error && <h4>Loading.........</h4>}
@@ -124,7 +126,7 @@ function AllCountries() {
               </div>
 
             </div>
-         </Link>
+          </Link>
             ))
         }
 
@@ -132,7 +134,6 @@ function AllCountries() {
      
       </div>
 
-      
     </div>
   );
 };
