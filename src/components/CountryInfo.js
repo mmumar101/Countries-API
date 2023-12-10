@@ -7,9 +7,9 @@ import { api } from './api'
 
 
 function CountryInfo() {
-  const [country, setCountry] = useState([])
-  const [isLoading, setIsLoading] = useState(true)
-  const [error, setError] = useState('')
+  const [ country, setCountry ] = useState([])
+  const [ isLoading, setIsLoading ] = useState(true)
+  const [ error, setError ] = useState('')
 
 
   const {countryName} = useParams()
@@ -44,17 +44,17 @@ function CountryInfo() {
 
         <div className='mt-8'>
           {
-          country?.map((country, index) =>(
+          country?.map((country, index ) =>(
             <div>
               <div>
                 <img src={country.flags.png} alt='' />
               </div>
               
               <div className='mt-8'>
-                <h5>Native Name:  <span>{country.name.common}</span></h5>
-                <h5>Population:  <span>{country.population}</span></h5>
-                <h5>Region:  <span>{country.region}</span></h5>
-                <h5>Sub Region:  <span>{country.subRegion}</span></h5>
+                <h5>Native Name: <span>{country.name.common}</span></h5>
+                <h5>Population: <span>{country.population}</span></h5>
+                <h5>Region: <span>{country.region}</span></h5>
+                <h5>Sub Region: <span>{country.subRegion}</span></h5>
               </div>
 
 

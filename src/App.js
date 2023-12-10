@@ -15,7 +15,7 @@ function App() {
       <Route path='/' element={<AllCountries/>} />
       <Route path='/country/:countryName' element={<CountryInfo/>} />
       </Routes>
-      {/* <AllCountries /> */}
+      <AllCountries />
       {/* <CountryInfo /> */}
     </div>
     </BrowserRouter>
