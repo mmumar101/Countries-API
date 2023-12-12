@@ -113,7 +113,7 @@ function AllCountries() {
         {
           countries?.map(country =>(
          <Link to={`/country/${country.name.common}`} >
-            <div className=''>
+            <div className='mx-auto w-60'>
               <div className=''>
                 <img src={country.flags.png} alt='' className='' />
               </div>

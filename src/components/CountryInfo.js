@@ -45,7 +45,7 @@ function CountryInfo() {
         <div className='mt-8'>
           {
           country?.map((country, index ) =>(
-            <div>
+            <div className='mx-auto w-60'>
               <div>
                 <img src={country.flags.png} alt='' />
               </div>
