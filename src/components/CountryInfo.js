@@ -36,15 +36,13 @@ function CountryInfo() {
     getCountryByName()
   })
 
-
-  
   return (
         <div className='ml-5 pt-4'>
           <Link to='/' className='font-bold '>Back</Link>
 
         <div className='mt-8'>
           {
-          country?.map((country, index ) =>(
+          country?.map((country) =>(
             <div className='mx-auto w-60'>
               <div>
                 <img src={country.flags.png} alt='' />

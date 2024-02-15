@@ -7,8 +7,8 @@ import { Route, createBrowserRouter, createRoutesFromElements, RouterProvider } 
 
 const router = createBrowserRouter(
   createRoutesFromElements(
-    <Route>
-    <Route path='/'  element={<AllCountries/>} />
+    <Route  >
+    <Route index  element={<AllCountries/>} />
     <Route path='/country/:countryName' element={<CountryInfo/>} />
     </Route>
   )
@@ -21,8 +21,6 @@ function App() {
   return (
     <div className={`${darkTheme ? 'bg-[#F2F2F2]' : 'bg-[#202C36]'} ${darkTheme ? 'text-[#2B3844]' : 'text-[#F2F2F2]'} min-h-screen`}>
         <RouterProvider router={router} />
-      {/* <AllCountries /> */}
-      {/* <CountryInfo /> */}
     </div>
 
   );
