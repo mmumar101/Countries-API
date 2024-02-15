@@ -39,8 +39,8 @@ function CountryInfo() {
 
   
   return (
-        <div className='ml-5'>
-          <Link to='/' className='font-bold'>Back</Link>
+        <div className='ml-5 pt-4'>
+          <Link to='/' className='font-bold '>Back</Link>
 
         <div className='mt-8'>
           {
